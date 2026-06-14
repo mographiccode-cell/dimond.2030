@@ -1,0 +1,335 @@
+# مهارة تحميل أصول Instagram وبناء صفحة هبوط
+# Instagram Asset Extraction & Landing Page Builder Skill
+
+## المقدمة
+
+هذه مهارة متخصصة في تحميل صور وفيديوهات من حسابات Instagram وبناء صفحات هبوط احترافية باستخدام هذه الأصول. يمكن استخدام هذه المهارة كبرومبت لمهام مشابهة.
+
+---
+
+## البرومبت الرئيسي (Main Prompt)
+
+```
+أنت متخصص في استخراج أصول Instagram وبناء صفحات هبوط احترافية.
+
+المطلوب:
+1. استقبل رابط حساب Instagram
+2. استخرج جميع البيانات العامة من الحساب
+3. حمّل جميع الصور والفيديوهات من الحساب
+4. ابنِ صفحة هبوط احترافية باستخدام الأصول المحملة
+
+القواعد:
+- لا تستخدم أي صور أو فيديوهات من مصادر خارجية
+- حافظ على هوية الحساب الأصلية
+- استخدم صورة البروفايل كغلاف رئيسي إذا أمكن
+- لا تتجاوز 4 فيديوهات
+- يجب أن تعمل الصفحة على GitHub Pages
+```
+
+---
+
+## الخطوة 1: تحليل الحساب (Account Analysis)
+
+### الطريقة المستخدمة:
+
+```
+1. استخدم webfetch لجلب صفحة الحساب من Instagram
+2. إذا حُجبت الصفحة، استخدم خدمات بديلة مثل:
+   - picuki.com
+   - imginn.com
+   - piokok.com
+3. استخدم websearch للبحث عن معلومات الحساب
+4. استخرج:
+   - اسم المستخدم
+   - الاسم المعروض
+   - الوصف (Bio)
+   - عدد المتابعين
+   - عدد المتابَعين
+   - عدد المنشورات
+   - المدينة/الدولة
+   - معلومات الاتصال
+```
+
+### مثال على البحث:
+
+```powershell
+# البحث عن الحساب
+websearch query="instagram [username] account"
+
+# جلب البيانات من خدمات بديلة
+webfetch url="https://www.piokok.com/profile/[username]" format="markdown"
+```
+
+---
+
+## الخطوة 2: تحميل الصور (Image Download)
+
+### الطريقة المستخدمة:
+
+```
+1. من صفحة(piokok.com) استخرج روابط الصور المباشرة
+2. الصور تظهر في تنسيق:
+   https://scontent.cdninstagram.com/v/t51.82787-15/[ID].jpg?...
+3. استخدم PowerShell Invoke-WebRequest لتحميل كل صورة
+4. احفظ الصور في مجلد /images/
+5. اسمّي الصور: post1.jpg, post2.jpg, etc.
+```
+
+### مثال على تحميل الصور:
+
+```powershell
+# تحميل صورة منشور
+Invoke-WebRequest -Uri "[IMAGE_URL]" -OutFile "images/post1.jpg"
+
+# تحميل صورة البروفايل
+Invoke-WebRequest -Uri "[AVATAR_URL]" -OutFile "images/avatar.jpg"
+```
+
+### هيكل المجلدات:
+
+```
+/project-name/
+├── images/
+│   ├── profile.jpg      # صورة البروفايل (حجم صغير)
+│   ├── avatar.jpg       # صورة البروفايل (حجم متوسط)
+│   ├── avatar-hd.jpg    # صورة البروفايل (دقة عالية)
+│   ├── post1.jpg        # منشور 1
+│   ├── post2.jpg        # منشور 2
+│   └── ...
+```
+
+---
+
+## الخطوة 3: تحميل الفيديوهات (Video Download)
+
+### الطريقة المستخدمة:
+
+```
+1. من صفحة(piokok.com) استخرج روابط الفيديوهات المباشرة
+2. الفيديوهات تظهر في تنسيق:
+   https://scontent.cdninstagram.com/o1/v/t2/f2/m86/[ID].mp4?...
+3. استخدم PowerShell Invoke-WebRequest لتحميل كل فيديو
+4. احفظ الفيديوهات في مجلد /videos/
+5. اسمّي الفيديوهات: video1.mp4, video2.mp4, etc.
+6. الحد الأقصى: 4 فيديوهات
+```
+
+### مثال على تحميل الفيديوهات:
+
+```powershell
+# تحميل فيديو
+Invoke-WebRequest -Uri "[VIDEO_URL]" -OutFile "videos/video1.mp4"
+```
+
+---
+
+## الخطوة 4: بناء صفحة الهبوط (Landing Page Build)
+
+### التقنيات المستخدمة:
+
+```
+- HTML5
+- Tailwind CSS (CDN)
+- Google Fonts (Tajawal + Playfair Display)
+- Font Awesome (أيقونات)
+- GSAP (أنيميشن متقدم)
+- ScrollTrigger (أنيميشن عند التمرير)
+```
+
+### مكونات الصفحة:
+
+```
+1. Preloader - شاشة تحميل أنيقة
+2. Navigation - قائمة تنقل ثابتة
+3. Hero Section - القسم الرئيسي مع صورة الحساب
+4. About Section - قسم من نحن
+5. Products Section - قسم المنتجات
+6. Videos Section - قسم الفيديوهات
+7. Features Section - قسم المميزات
+8. Contact Section - قسم التواصل
+9. Footer - التذييل
+10. WhatsApp Float - زر الواتساب العائم
+```
+
+### مميزات التصميم:
+
+```
+- تصميم RTL عربي
+- متجاوب بالكامل (Mobile-first)
+- تأثيرات 3D مع perspective
+- أنيميشن GSAP احترافي
+- تأثيرات hover متقدمة
+- عمق بصري مع shadows
+- ألوان مطابقة للحساب
+```
+
+---
+
+## الخطوة 5: النشر على GitHub Pages
+
+### الطريقة المستخدمة:
+
+```
+1. إنشاء مستودع GitHub جديد
+2. رفع جميع الملفات
+3. إنشاء فرع gh-pages
+4. تفعيل GitHub Pages من الإعدادات
+5. التحقق من عمل الرابط
+```
+
+### أوسلي GitHub Actions:
+
+```yaml
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [ main, master ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - uses: actions/deploy-pages@v4
+```
+
+---
+
+## هيكل الملفات النهائية
+
+```
+/project-name/
+├── landing-page.html          # الصفحة الرئيسية
+├── account-research.json      # بيانات تحليل الحساب
+├── account-summary.md         # ملخص الحساب
+├── README.md                  # وصف المشروع
+├── deployment-report.md       # تقرير النشر
+├── skill-prompt.txt           # هذا الملف
+├── images/
+│   ├── profile.jpg
+│   ├── avatar.jpg
+│   ├── avatar-hd.jpg
+│   ├── post1.jpg - post[N].jpg
+├── videos/
+│   ├── video1.mp4 - video4.mp4
+├── data/
+│   ├── account-data.json
+│   ├── brand-identity.json
+│   ├── products.json
+│   ├── images-manifest.json
+│   └── videos-manifest.json
+├── content/
+│   ├── brand-copy.md
+│   ├── brand-guidelines.md
+│   └── raw-instagram-notes.md
+└── .github/workflows/
+    └── deploy.yml
+```
+
+---
+
+## نصائح مهمة
+
+### 1. تحميل صورة البروفايل بجودة عالية:
+
+```
+- استخدم صفحة /dp/ في piokok.com للحصول على الدقة الكاملة
+- الروابط المباشرة تظهر في صفحة HTML كـ img src
+- حمّل الصورة الأكبر المتاحة
+```
+
+### 2. استخراج روابط الصور:
+
+```
+- الروابط تبدأ بـ https://scontent.cdninstagram.com/
+- ت содержى معاملات مثل stp, efg, _nc_ht
+- أضف &dl=1 في النهاية للتحميل المباشر
+```
+
+### 3. استخراج روابط الفيديوهات:
+
+```
+- الروابط تبدأ بـ https://scontent.cdninstagram.com/o1/v/t2/
+- الفيديوهات بتنسيق MP4
+- الحد الأقصى 4 فيديوهات للحفاظ على الأداء
+```
+
+### 4. استخدام صورة البروفايل كغلاف:
+
+```
+- صورة البروفايل عادة ما تكون الأفضل جودة
+- يمكن استخدامها في Hero Section
+- تظهر الهوية البصرية للحساب بوضوح
+```
+
+---
+
+## مثال على البرومبت الكامل
+
+```
+قم ببناء صفحة هبوط احترافية للحساب [INSTAGRAM_URL]
+
+المتطلبات:
+1. حلّل الحساب واستخرج جميع البيانات
+2. حمّل جميع الصور والفيديوهات من الحساب
+3. استخدم صورة البروفايل كغلاف رئيسي
+4. ابنِ صفحة هبوط بتصميم premium
+5. استخدم Tailwind CSS وGSAP
+6. اجعل التصميم RTL ومتجاوب
+7. انشر على GitHub Pages
+
+الهوية البصرية:
+- استخرج الألوان من الحساب
+- حافظ على الطابع العام
+- لا تستخدم مصادر خارجية
+
+المخرجات:
+- landing-page.html
+- جميع الصور والفيديوهات
+- ملفات البيانات
+- رابط GitHub Pages يعمل
+```
+
+---
+
+## ملاحظات تقنية
+
+### Tailwind CSS CDN:
+
+```html
+<script src="https://cdn.tailwindcss.com"></script>
+```
+
+### Google Fonts:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+```
+
+### GSAP:
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+```
+
+### Font Awesome:
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+```
+
+---
+
+## الخلاصة
+
+هذه المهارة توفر طريقة متكاملة ل:
+1. تحليل حسابات Instagram
+2. تحميل جميع الأصول (صور + فيديوهات)
+3. بناء صفحات هبوط احترافية
+4. النشر على GitHub Pages
+
+المفتاح هو استخدام خدمات بديلة مثل piokok.com لاستخراج الروابط المباشرة للصور والفيديوهات، ثم تحميلها باستخدام PowerShell.
