@@ -1,0 +1,32 @@
+{
+  "videos": [
+    {
+      "id": "video1",
+      "src": "videos/video1.mp4",
+      "alt": "فيديو مخبوزات فايا",
+      "type": "reel",
+      "duration": 6
+    },
+    {
+      "id": "video2",
+      "src": "videos/video2.mp4",
+      "alt": "فيديو تحضير حلويات",
+      "type": "reel",
+      "duration": 8
+    },
+    {
+      "id": "video3",
+      "src": "videos/video3.mp4",
+      "alt": "فيديو منتجات المخبوزات",
+      "type": "reel",
+      "duration": 11
+    },
+    {
+      "id": "video4",
+      "src": "videos/video4.mp4",
+      "alt": "فيديو عرض الحلويات",
+      "type": "reel",
+      "duration": 19
+    }
+  ]
+}

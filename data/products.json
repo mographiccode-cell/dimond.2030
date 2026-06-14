@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "كيك الشوكولاتة",
+      "name_en": "Chocolate Cake",
+      "category": "كيك",
+      "description": "كيك شوكولاتة فاخر بأسعار مناسبة",
+      "price": "ابتداءً من 80 ريال",
+      "image": "images/post1.jpg",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "حلويات متنوعة",
+      "name_en": "Assorted Sweets",
+      "category": "حلويات",
+      "description": "تشكيلة فاخرة من أشهى الحلويات",
+      "price": "ابتداءً من 50 ريال",
+      "image": "images/post2.jpg",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "مخبوزات طازجة",
+      "name_en": "Fresh Pastries",
+      "category": "مخبوزات",
+      "description": "مخبوزات طازجة يومياً من أفضل المكونات",
+      "price": "ابتداءً من 15 ريال",
+      "image": "images/post3.jpg",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "معجنات حلوة",
+      "name_en": "Sweet Pastries",
+      "category": "معجنات",
+      "description": "معجنات حلوة بحشوات متنوعة",
+      "price": "ابتداءً من 10 ريال",
+      "image": "images/post4.jpg",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "name": "كيك بالكريمة",
+      "name_en": "Cream Cake",
+      "category": "كيك",
+      "description": "كيك كريمة فاخر للمناسبات",
+      "price": "ابتداءً من 100 ريال",
+      "image": "images/post5.jpg",
+      "featured": true
+    },
+    {
+      "id": 6,
+      "name": "صواني حلويات",
+      "name_en": "Sweets Trays",
+      "category": "حلويات",
+      "description": "صواني حلويات للمناسبات والحفلات",
+      "price": "ابتداءً من 120 ريال",
+      "image": "images/post6.jpg",
+      "featured": false
+    }
+  ],
+  "categories": ["كيك", "حلويات", "مخبوزات", "معجنات", "صواني"]
+}

@@ -1,0 +1,39 @@
+{
+  "brand_identity": {
+    "name": "Faya Bakery",
+    "name_ar": "فايا للمخبوزات",
+    "tagline": "مخبوزات طازجة كل يوم",
+    "tagline_en": "Fresh Bakery Every Day",
+    "colors": {
+      "primary": "#D4A574",
+      "primary_light": "#E8C9A0",
+      "primary_dark": "#B8834A",
+      "secondary": "#FFF8F0",
+      "secondary_dark": "#F5E6D3",
+      "accent": "#C9956B",
+      "text_dark": "#3D2B1F",
+      "text_light": "#6B4C3B",
+      "background": "#FFFBF5",
+      "white": "#FFFFFF",
+      "gold": "#D4A574"
+    },
+    "typography": {
+      "font_family_ar": "Tajawal",
+      "font_family_en": "Playfair Display",
+      "heading_style": "elegant",
+      "body_style": "modern"
+    },
+    "visual_style": {
+      "mood": "warm, inviting, premium bakery",
+      "photography": "natural lighting, food-focused, warm tones",
+      "brand_tone": "friendly, welcoming, professional",
+      "keywords": ["طازج", "منزلي", "جودة عالية", "مميز", "حلويات", "مخبوزات"]
+    },
+    "logo": {
+      "type": "wordmark",
+      "text": "Faya",
+      "emoji": "👩🏻‍🍳",
+      "style": "elegant script with chef emoji"
+    }
+  }
+}

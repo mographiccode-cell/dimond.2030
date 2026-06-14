@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فايا للمخبوزات | Faya Bakery - مخبوزات طازجة كل يوم</title>
+    <meta name="description" content="فايا للمخبوزات - مخبوزات وحلويات طازجة يومياً في جدة. توصيل مجاني. اطلب الآن عبر الواتساب أو الدايركت">
+    <meta name="keywords" content="مخبوزات, حلويات, جدة, توصيل مجاني, كيك, معجنات, فايا">
+    <meta name="author" content="Faya Bakery">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="فايا للمخبوزات | Faya Bakery">
+    <meta property="og:description" content="مخبوزات وحلويات طازجة يومياً في جدة. توصيل مجاني.">
+    <meta property="og:image" content="images/profile.jpg">
+    <meta property="og:url" content="https://dimond-2030.github.io/dimond.2030/">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#D4A574',
+                        'brand-primary-light': '#E8C9A0',
+                        'brand-primary-dark': '#B8834A',
+                        'brand-secondary': '#FFF8F0',
+                        'brand-secondary-dark': '#F5E6D3',
+                        'brand-accent': '#C9956B',
+                        'brand-text': '#3D2B1F',
+                        'brand-text-light': '#6B4C3B',
+                        'brand-gold': '#D4A574',
+                        'brand-cream': '#FFFBF5',
+                    },
+                    fontFamily: {
+                        'tajawal': ['Tajawal', 'sans-serif'],
+                        'playfair': ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'slide-down': 'slideDown 0.6s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: #FFFBF5;
+            overflow-x: hidden;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(212, 165, 116, 0.3); }
+            to { box-shadow: 0 0 40px rgba(212, 165, 116, 0.6); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes revealLine {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #FFFBF5 0%, #F5E6D3 50%, #E8C9A0 100%);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(212, 165, 116, 0.4);
+        }
+        
+        .glow-effect {
+            position: relative;
+        }
+        
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #D4A574, #E8C9A0, #D4A574);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+        
+        .parallax-layer {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #D4A574 0%, #B8834A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-delay-1 {
+            animation: float 6s ease-in-out infinite 1s;
+        }
+        
+        .floating-delay-2 {
+            animation: float 6s ease-in-out infinite 2s;
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .section-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .line-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .line-reveal::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A574, #E8C9A0);
+            transition: width 0.6s ease-out;
+        }
+        
+        .line-reveal.revealed::after {
+            width: 100%;
+        }
+        
+        .instagram-embed {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+        
+        .video-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(61, 43, 31, 0.7), transparent);
+            z-index: 1;
+        }
+        
+        .video-card video {
+            transition: transform 0.5s ease;
+        }
+        
+        .video-card:hover video {
+            transform: scale(1.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #D4A574 0%, #B8834A 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #B8834A 0%, #D4A574 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+        
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        .image-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-3d:hover {
+            transform: rotateY(-5deg) rotateX(5deg);
+        }
+        
+        .blob-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        
+        .mesh-gradient {
+            background: 
+                radial-gradient(at 40% 20%, rgba(212, 165, 116, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(232, 201, 160, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(201, 149, 107, 0.2) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(212, 165, 116, 0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(232, 201, 160, 0.3) 0px, transparent 50%);
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F5E6D3;
+            border-radius: 10px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D4A574;
+            border-radius: 10px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #B8834A;
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #D4A574 0%, #E8C9A0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-tajawal text-brand-text antialiased">
+    
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-brand-cream flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="inline-block animate-bounce">
+                <span class="text-6xl">👩🏻‍🍳</span>
+            </div>
+            <h2 class="mt-4 text-2xl font-bold text-gradient">فايا للمخبوزات</h2>
+            <p class="mt-2 text-brand-text-light">جاري التحميل...</p>
+            <div class="mt-4 w-48 h-1 bg-brand-secondary-dark rounded-full mx-auto overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-brand-primary to-brand-accent rounded-full animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <span class="text-4xl">👩🏻‍🍳</span>
+                    <div>
+                        <h1 class="text-xl font-bold text-brand-text">Faya</h1>
+                        <p class="text-xs text-brand-text-light">Bakery</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-brand-text hover:text-brand-primary transition-colors font-medium">الرئيسية</a>
+                    <a href="#about" class="text-brand-text hover:text-brand-primary transition-colors font-medium">من نحن</a>
+                    <a href="#products" class="text-brand-text hover:text-brand-primary transition-colors font-medium">منتجاتنا</a>
+                    <a href="#videos" class="text-brand-text hover:text-brand-primary transition-colors font-medium">الفيديوهات</a>
+                    <a href="#contact" class="text-brand-text hover:text-brand-primary transition-colors font-medium">تواصل معنا</a>
+                    <a href="https://wa.me/966537383363" target="_blank" class="btn-primary px-6 py-3 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                        <span class="flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            اطلب الآن
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-brand-secondary transition-colors">
+                    <i class="fas fa-bars text-xl text-brand-text"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-brand-secondary-dark">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#home" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">الرئيسية</a>
+                <a href="#about" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">من نحن</a>
+                <a href="#products" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">منتجاتنا</a>
+                <a href="#videos" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">الفيديوهات</a>
+                <a href="#contact" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">تواصل معنا</a>
+                <a href="https://wa.me/966537383363" target="_blank" class="block btn-primary py-3 px-4 rounded-xl text-white font-bold text-center">
+                    <i class="fab fa-whatsapp ml-2"></i>
+                    اطلب الآن عبر الواتساب
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen hero-gradient overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 mesh-gradient"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 right-10 w-32 h-32 bg-brand-primary/10 rounded-full blur-3xl floating"></div>
+        <div class="absolute top-40 left-20 w-48 h-48 bg-brand-accent/10 rounded-full blur-3xl floating-delay-1"></div>
+        <div class="absolute bottom-20 right-1/4 w-40 h-40 bg-brand-primary-light/20 rounded-full blur-3xl floating-delay-2"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-right order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full mb-6 shadow-sm">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        <span class="text-sm font-medium text-brand-text-light">مخبوزات طازجة يومياً</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-text leading-tight mb-6">
+                        <span class="block">فايا</span>
+                        <span class="text-gradient font-playfair">للمخبوزات</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-brand-text-light mb-8 max-w-lg mx-auto lg:mx-0 lg:max-w-none">
+                        أشهى المخبوزات والحلويات الطازجة في جدة
+                        <br>
+                        <span class="font-bold text-brand-primary">توصيل مجاني</span> لجميع أنحاء المدينة
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/966537383363" target="_blank" class="btn-primary px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
+                            <span class="flex items-center justify-center gap-3">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                                اطلب عبر الواتساب
+                            </span>
+                        </a>
+                        <a href="#products" class="px-8 py-4 rounded-full border-2 border-brand-primary text-brand-primary font-bold text-lg hover:bg-brand-primary hover:text-white transition-all">
+                            <span class="flex items-center justify-center gap-2">
+                                <i class="fas fa-eye"></i>
+                                شاهد المنتجات
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="flex items-center justify-center lg:justify-start gap-8 mt-12">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-brand-primary">183+</div>
+                            <div class="text-sm text-brand-text-light">متابع</div>
+                        </div>
+                        <div class="w-px h-12 bg-brand-primary/30"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-brand-primary">مجاني</div>
+                            <div class="text-sm text-brand-text-light">التوصيل</div>
+                        </div>
+                        <div class="w-px h-12 bg-brand-primary/30"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-brand-primary">جدة</div>
+                            <div class="text-sm text-brand-text-light">المدينة</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div class="order-1 lg:order-2 relative">
+                    <div class="relative z-10">
+                        <div class="image-3d rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="images/post1.jpg" alt="كيك شوكولاتة فاخر" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Card -->
+                    <div class="absolute -bottom-6 -left-6 lg:-left-12 bg-white rounded-2xl p-4 shadow-xl floating z-20">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center">
+                                <span class="text-2xl">🎂</span>
+                            </div>
+                            <div>
+                                <div class="font-bold text-brand-text">كيك مميز</div>
+                                <div class="text-sm text-brand-text-light">طازج يومياً</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -top-4 -right-4 lg:-right-8 bg-brand-primary text-white px-6 py-3 rounded-full shadow-lg floating-delay-1 z-20">
+                        <span class="font-bold">🔥 الأفضل في جدة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <a href="#about" class="flex flex-col items-center text-brand-text-light hover:text-brand-primary transition-colors">
+                <span class="text-sm mb-2">اكتشف المزيد</span>
+                <i class="fas fa-chevron-down text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary-light"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="section-reveal">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-primary/10 transform rotate-6 rounded-3xl"></div>
+                        <div class="relative image-3d rounded-3xl overflow-hidden shadow-xl">
+                            <img src="images/profile.jpg" alt="فايا للمخبوزات" class="w-full h-96 object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="section-reveal">
+                    <span class="inline-block text-brand-primary font-bold text-lg mb-2">من نحن</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-text mb-6">
+                        مخبوزات وحلويات
+                        <span class="text-gradient">فايا</span>
+                    </h2>
+                    
+                    <p class="text-lg text-brand-text-light mb-6 leading-relaxed">
+                        نحن في <span class="font-bold text-brand-primary">فايا للمخبوزات</span> نقدم لكم أشهى المخبوزات والحلويات الطازجة يومياً. نستخدم أجود المكونات الطبيعية لضمان جودة منتجاتنا التي تنال إعجاب عملائنا.
+                    </p>
+                    
+                    <p class="text-lg text-brand-text-light mb-8 leading-relaxed">
+                        نسعى دائماً لتقديم تجربة فريدة لعملائنا من خلال منتجات متنوعة وخدمة توصيل مجانية في جميع أنحاء مدينة جدة.
+                    </p>
+                    
+                    <!-- Features -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3 p-3 bg-brand-secondary rounded-xl">
+                            <span class="text-2xl">✨</span>
+                            <span class="font-medium">طازج يومياً</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-brand-secondary rounded-xl">
+                            <span class="text-2xl">🚚</span>
+                            <span class="font-medium">توصيل مجاني</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-brand-secondary rounded-xl">
+                            <span class="text-2xl">💯</span>
+                            <span class="font-medium">جودة عالية</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-brand-secondary rounded-xl">
+                            <span class="text-2xl">📍</span>
+                            <span class="font-medium">جدة</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/966537383363" target="_blank" class="inline-flex items-center gap-2 btn-primary px-8 py-4 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        تواصل معنا الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-brand-secondary relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-16 section-reveal">
+                <span class="inline-block text-brand-primary font-bold text-lg mb-2 line-reveal">منتجاتنا</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
+                    أشهى <span class="text-gradient">المخبوزات والحلويات</span>
+                </h2>
+                <p class="text-lg text-brand-text-light max-w-2xl mx-auto">
+                    تشكيلة متنوعة من المخبوزات الطازجة والحلويات الفاخرة المحضرة بأجود المكونات
+                </p>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/post1.jpg" alt="كيك شوكولاتة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
+                            مميز
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-text mb-2">كيك شوكولاتة</h3>
+                        <p class="text-brand-text-light mb-4">كيك شوكولاتة فاخر بأسعار مناسبة</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 80 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب كيك شوكولاتة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/post2.jpg" alt="حلويات متنوعة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
+                            الأكثر طلباً
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-text mb-2">حلويات متنوعة</h3>
+                        <p class="text-brand-text-light mb-4">تشكيلة فاخرة من أشهى الحلويات</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 50 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب حلويات متنوعة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/post3.jpg" alt="مخبوزات طازجة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
+                            طازج
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-text mb-2">مخبوزات طازجة</h3>
+                        <p class="text-brand-text-light mb-4">مخبوزات طازجة يومياً من أفضل المكونات</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 15 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب مخبوزات طازجة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/post4.jpg" alt="معجنات حلوة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-text mb-2">معجنات حلوة</h3>
+                        <p class="text-brand-text-light mb-4">معجنات حلوة بحشوات متنوعة</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 10 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب معجنات حلوة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/post5.jpg" alt="كيك بالكريمة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
+                            للمناسبات
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-text mb-2">كيك بالكريمة</h3>
+                        <p class="text-brand-text-light mb-4">كيك كريمة فاخر للمناسبات</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 100 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب كيك بالكريمة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/post6.jpg" alt="صواني حلويات" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
+                            صواني
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-text mb-2">صواني حلويات</h3>
+                        <p class="text-brand-text-light mb-4">صواني حلويات للمناسبات والحفلات</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 120 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب صواني حلويات" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-16 section-reveal">
+                <span class="inline-block text-brand-primary font-bold text-lg mb-2 line-reveal">الفيديوهات</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
+                    شاهد <span class="text-gradient">إبداعاتنا</span>
+                </h2>
+                <p class="text-lg text-brand-text-light max-w-2xl mx-auto">
+                    مقاطع فيديو من حسابنا على الإنستغرام
+                </p>
+            </div>
+            
+            <!-- Videos Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Video 1 -->
+                <div class="section-reveal video-card aspect-[9/16] rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <video src="videos/video1.mp4" class="w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
+                    <div class="absolute inset-0 flex items-center justify-center z-10">
+                        <button class="play-btn w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+                            <i class="fas fa-play text-brand-primary text-xl mr-1"></i>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
+                        <span class="text-white font-bold">مخبوزات طازجة</span>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="section-reveal video-card aspect-[9/16] rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <video src="videos/video2.mp4" class="w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
+                    <div class="absolute inset-0 flex items-center justify-center z-10">
+                        <button class="play-btn w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+                            <i class="fas fa-play text-brand-primary text-xl mr-1"></i>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
+                        <span class="text-white font-bold">تحضير حلويات</span>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="section-reveal video-card aspect-[9/16] rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <video src="videos/video3.mp4" class="w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
+                    <div class="absolute inset-0 flex items-center justify-center z-10">
+                        <button class="play-btn w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+                            <i class="fas fa-play text-brand-primary text-xl mr-1"></i>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
+                        <span class="text-white font-bold">منتجاتنا المميزة</span>
+                    </div>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="section-reveal video-card aspect-[9/16] rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <video src="videos/video4.mp4" class="w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
+                    <div class="absolute inset-0 flex items-center justify-center z-10">
+                        <button class="play-btn w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+                            <i class="fas fa-play text-brand-primary text-xl mr-1"></i>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
+                        <span class="text-white font-bold">عرض الحلويات</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Instagram Feed -->
+            <div class="mt-16 text-center section-reveal">
+                <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
+                    <i class="fab fa-instagram text-2xl"></i>
+                    تابعنا على الإنستغرام
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-brand-secondary relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 section-reveal">
+                <span class="inline-block text-brand-primary font-bold text-lg mb-2 line-reveal">مميزاتنا</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
+                    لماذا <span class="text-gradient">فايا</span>؟
+                </h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="section-reveal text-center p-8 bg-white rounded-3xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">🚚</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-text mb-3">توصيل مجاني</h3>
+                    <p class="text-brand-text-light">توصيل مجاني لجميع أنحاء جدة</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="section-reveal text-center p-8 bg-white rounded-3xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">✨</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-text mb-3">طازج يومياً</h3>
+                    <p class="text-brand-text-light">جميع منتجاتنا طازجة يومياً</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="section-reveal text-center p-8 bg-white rounded-3xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">💯</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-text mb-3">جودة عالية</h3>
+                    <p class="text-brand-text-light">نستخدم أجود المكونات الطبيعية</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="section-reveal text-center p-8 bg-white rounded-3xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-text mb-3">طلب سهل</h3>
+                    <p class="text-brand-text-light">اطلب عبر الواتساب أو الدايركت</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-brand-text relative overflow-hidden">
+        <div class="absolute inset-0 mesh-gradient opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="section-reveal text-center lg:text-right">
+                    <span class="inline-block text-brand-primary font-bold text-lg mb-2">تواصل معنا</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+                        اطلب <span class="text-brand-primary">الآن</span>
+                    </h2>
+                    
+                    <p class="text-lg text-white/80 mb-8 leading-relaxed">
+                        للطلب أو للاستفسار، تواصل معنا عبر الواتساب أو الدايركت على الإنستغرام. نحن هنا لخدمتك!
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-4 justify-center lg:justify-start">
+                            <div class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-white text-xl"></i>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-white font-bold">الواتساب</div>
+                                <div class="text-white/70">0537383363</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 justify-center lg:justify-start">
+                            <div class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                                <i class="fab fa-instagram text-white text-xl"></i>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-white font-bold">الإنستغرام</div>
+                                <div class="text-white/70">@dimond.2030</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 justify-center lg:justify-start">
+                            <div class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-white font-bold">الموقع</div>
+                                <div class="text-white/70">جدة، المملكة العربية السعودية</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/966537383363" target="_blank" class="inline-flex items-center gap-3 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        اطلب عبر الواتساب
+                    </a>
+                </div>
+                
+                <!-- Map/Instagram -->
+                <div class="section-reveal">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+                        <div class="text-center mb-6">
+                            <span class="text-6xl">👩🏻‍🍳</span>
+                            <h3 class="text-2xl font-bold text-white mt-4">فايا للمخبوزات</h3>
+                            <p class="text-white/70">@dimond.2030</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 transition-all">
+                                <i class="fab fa-instagram text-3xl text-brand-primary mb-2"></i>
+                                <div class="text-white text-sm">إنستغرام</div>
+                            </a>
+                            <a href="https://wa.me/966537383363" target="_blank" class="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 transition-all">
+                                <i class="fab fa-whatsapp text-3xl text-green-400 mb-2"></i>
+                                <div class="text-white text-sm">واتساب</div>
+                            </a>
+                        </div>
+                        
+                        <div class="text-center">
+                            <p class="text-white/60 text-sm">📍 جدة، المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-brand-text border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">👩🏻‍🍳</span>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Faya Bakery</h3>
+                        <p class="text-sm text-white/60">فايا للمخبوزات</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary transition-all">
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
+                    <a href="https://wa.me/966537383363" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-500 transition-all">
+                        <i class="fab fa-whatsapp text-white"></i>
+                    </a>
+                </div>
+                
+                <p class="text-white/60 text-sm">
+                    © 2026 Faya Bakery. جميع الحقوق محفوظة
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/966537383363" target="_blank" class="fixed bottom-6 left-6 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-xl', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-xl', 'shadow-lg');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Section reveal on scroll
+        const revealElements = document.querySelectorAll('.section-reveal, .line-reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('revealed');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Video play/pause on hover
+        document.querySelectorAll('.video-card').forEach(card => {
+            const video = card.querySelector('video');
+            const playBtn = card.querySelector('.play-btn');
+            
+            if (video && playBtn) {
+                playBtn.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        playBtn.innerHTML = '<i class="fas fa-pause text-brand-primary text-xl"></i>';
+                    } else {
+                        video.pause();
+                        playBtn.innerHTML = '<i class="fas fa-play text-brand-primary text-xl mr-1"></i>';
+                    }
+                });
+                
+                card.addEventListener('mouseenter', () => {
+                    video.play();
+                    playBtn.innerHTML = '<i class="fas fa-pause text-brand-primary text-xl"></i>';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0;
+                    playBtn.innerHTML = '<i class="fas fa-play text-brand-primary text-xl mr-1"></i>';
+                });
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Parallax effect on hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.getElementById('home');
+            if (hero) {
+                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
+        });
+    </script>
+</body>
+</html>

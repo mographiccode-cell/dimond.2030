@@ -1,0 +1,54 @@
+{
+  "images": [
+    {
+      "id": "profile",
+      "src": "images/profile.jpg",
+      "alt": "صورة بروفايل فايا للمخبوزات",
+      "type": "profile",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "id": "post1",
+      "src": "images/post1.jpg",
+      "alt": "كيك شوكولاتة فاخر",
+      "type": "product",
+      "category": "كيك"
+    },
+    {
+      "id": "post2",
+      "src": "images/post2.jpg",
+      "alt": "تشكيلة حلويات متنوعة",
+      "type": "product",
+      "category": "حلويات"
+    },
+    {
+      "id": "post3",
+      "src": "images/post3.jpg",
+      "alt": "مخبوزات طازجة",
+      "type": "product",
+      "category": "مخبوزات"
+    },
+    {
+      "id": "post4",
+      "src": "images/post4.jpg",
+      "alt": "معجنات حلوة",
+      "type": "product",
+      "category": "معجنات"
+    },
+    {
+      "id": "post5",
+      "src": "images/post5.jpg",
+      "alt": "كيك كريمة للمناسبات",
+      "type": "product",
+      "category": "كيك"
+    },
+    {
+      "id": "post6",
+      "src": "images/post6.jpg",
+      "alt": "صواني حلويات فاخرة",
+      "type": "product",
+      "category": "صواني"
+    }
+  ]
+}

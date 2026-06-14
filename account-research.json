@@ -1,0 +1,26 @@
+{
+  "account_analysis": {
+    "username": "dimond.2030",
+    "display_name": "Faya ✨👩🏻‍🍳",
+    "instagram_url": "https://www.instagram.com/dimond.2030/",
+    "bio": "Bakery and more✨…📍 جدة التوصيل مجاني الطلب عن طريق الدايركت او الواتس اب 0537383363💬",
+    "followers": 183,
+    "following": 1830,
+    "posts_count": 11,
+    "location": "جدة، المملكة العربية السعودية",
+    "business_type": "مخبوزات وحلويات",
+    "contact": {
+      "whatsapp": "0537383363",
+      "dm_ordering": true
+    },
+    "features": [
+      "توصيل مجاني",
+      "طلبات عبر الدايركت",
+      "طلبات عبر الواتساب",
+      "مخبوزات متنوعة",
+      "حلويات"
+    ],
+    "analysis_date": "2026-06-15",
+    "data_source": "Instagram public profile via Picnob"
+  }
+}
