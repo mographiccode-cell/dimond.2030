@@ -7,23 +7,16 @@
     <meta name="description" content="فايا للمخبوزات - مخبوزات وحلويات طازجة يومياً في جدة. توصيل مجاني. اطلب الآن عبر الواتساب أو الدايركت">
     <meta name="keywords" content="مخبوزات, حلويات, جدة, توصيل مجاني, كيك, معجنات, فايا">
     <meta name="author" content="Faya Bakery">
-    
-    <!-- Open Graph -->
     <meta property="og:title" content="فايا للمخبوزات | Faya Bakery">
     <meta property="og:description" content="مخبوزات وحلويات طازجة يومياً في جدة. توصيل مجاني.">
     <meta property="og:image" content="images/profile.jpg">
     <meta property="og:url" content="https://dimond-2030.github.io/dimond.2030/">
     <meta property="og:type" content="website">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <script>
@@ -31,30 +24,43 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-primary': '#D4A574',
-                        'brand-primary-light': '#E8C9A0',
-                        'brand-primary-dark': '#B8834A',
-                        'brand-secondary': '#FFF8F0',
-                        'brand-secondary-dark': '#F5E6D3',
-                        'brand-accent': '#C9956B',
-                        'brand-text': '#3D2B1F',
-                        'brand-text-light': '#6B4C3B',
-                        'brand-gold': '#D4A574',
-                        'brand-cream': '#FFFBF5',
+                        'brand': {
+                            '50': '#FFF9F2',
+                            '100': '#FFF3E5',
+                            '200': '#FFE4C4',
+                            '300': '#E8C9A0',
+                            '400': '#D4A574',
+                            '500': '#C9956B',
+                            '600': '#B8834A',
+                            '700': '#9A6B3A',
+                            '800': '#7D5530',
+                            '900': '#3D2B1F',
+                        },
+                        'cream': '#FFFBF5',
+                        'warm': {
+                            'light': '#FFF8F0',
+                            'DEFAULT': '#F5E6D3',
+                            'dark': '#E8D4BC',
+                        }
                     },
                     fontFamily: {
                         'tajawal': ['Tajawal', 'sans-serif'],
                         'playfair': ['Playfair Display', 'serif'],
                     },
                     animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'slide-down': 'slideDown 0.6s ease-out',
-                        'fade-in': 'fadeIn 1s ease-out',
-                        'scale-in': 'scaleIn 0.5s ease-out',
-                        'bounce-slow': 'bounce 3s infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out 2s infinite',
+                        'glow-pulse': 'glowPulse 4s ease-in-out infinite',
+                        'slide-up': 'slideUp 1s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'slide-down': 'slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'fade-in': 'fadeIn 1.2s ease-out',
+                        'scale-in': 'scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'blur-in': 'blurIn 1s ease-out',
+                        'slide-right': 'slideRight 1s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'slide-left': 'slideLeft 1s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'magnetic': 'magnetic 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                        'gradient-shift': 'gradientShift 8s ease infinite',
                     },
                 }
             }
@@ -62,298 +68,517 @@
     </script>
     
     <style>
+        :root {
+            --brand-primary: #D4A574;
+            --brand-primary-light: #E8C9A0;
+            --brand-primary-dark: #B8834A;
+            --brand-accent: #C9956B;
+            --brand-text: #3D2B1F;
+            --brand-text-light: #6B4C3B;
+            --brand-cream: #FFFBF5;
+            --brand-warm: #F5E6D3;
+        }
+
         * {
             font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
-        }
-        
-        body {
-            background-color: #FFFBF5;
             overflow-x: hidden;
         }
-        
+
+        body {
+            background-color: var(--brand-cream);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom Selection */
+        ::selection {
+            background: rgba(212, 165, 116, 0.3);
+            color: var(--brand-text);
+        }
+
+        /* Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--brand-cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--brand-primary), var(--brand-primary-dark));
+            border-radius: 3px;
+        }
+
+        /* ==================== ANIMATIONS ==================== */
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(1deg); }
+            66% { transform: translateY(-8px) rotate(-1deg); }
         }
-        
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(212, 165, 116, 0.3); }
-            to { box-shadow: 0 0 40px rgba(212, 165, 116, 0.6); }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 165, 116, 0.2), 0 0 40px rgba(212, 165, 116, 0.1); }
+            50% { box-shadow: 0 0 30px rgba(212, 165, 116, 0.4), 0 0 60px rgba(212, 165, 116, 0.2); }
         }
-        
+
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
+            from { opacity: 0; transform: translateY(60px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-30px); }
+            from { opacity: 0; transform: translateY(-40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.9); }
+            from { opacity: 0; transform: scale(0.85); }
             to { opacity: 1; transform: scale(1); }
         }
-        
-        @keyframes revealLine {
-            from { width: 0; }
-            to { width: 100%; }
+
+        @keyframes blurIn {
+            from { opacity: 0; filter: blur(10px); }
+            to { opacity: 1; filter: blur(0); }
         }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #FFFBF5 0%, #F5E6D3 50%, #E8C9A0 100%);
+
+        @keyframes slideRight {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
         }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+
+        @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
         }
-        
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        @keyframes magnetic {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
-        
-        .card-hover:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(212, 165, 116, 0.4);
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
-        
-        .glow-effect {
-            position: relative;
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
-        
-        .glow-effect::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(45deg, #D4A574, #E8C9A0, #D4A574);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
         }
-        
-        .glow-effect:hover::before {
-            opacity: 1;
+
+        @keyframes draw-line {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
         }
-        
-        .parallax-layer {
-            transform-style: preserve-3d;
-            perspective: 1000px;
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
+
+        /* ==================== COMPONENTS ==================== */
         
+        /* Premium Glass Morphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .glass-dark {
+            background: rgba(61, 43, 31, 0.85);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Text Gradient */
         .text-gradient {
-            background: linear-gradient(135deg, #D4A574 0%, #B8834A 100%);
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 50%, var(--brand-accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
+
+        .text-gradient-light {
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        .floating-delay-1 {
-            animation: float 6s ease-in-out infinite 1s;
+
+        /* Premium Buttons */
+        .btn-premium {
+            position: relative;
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
         }
-        
-        .floating-delay-2 {
-            animation: float 6s ease-in-out infinite 2s;
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
         }
-        
-        .section-reveal {
+
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(212, 165, 116, 0.4);
+        }
+
+        .btn-outline-premium {
+            position: relative;
+            border: 2px solid var(--brand-primary);
+            background: transparent;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .btn-outline-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: -1;
+        }
+
+        .btn-outline-premium:hover::before {
+            width: 100%;
+        }
+
+        .btn-outline-premium:hover {
+            color: white;
+            border-color: var(--brand-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 165, 116, 0.3);
+        }
+
+        /* Premium Card */
+        .card-premium {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(61, 43, 31, 0.08);
+        }
+
+        .card-premium:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(212, 165, 116, 0.25);
+        }
+
+        /* Image Container */
+        .img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .img-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(61, 43, 31, 0.4) 100%);
+            z-index: 1;
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease-out;
+            transition: opacity 0.5s ease;
         }
-        
-        .section-reveal.revealed {
+
+        .img-container:hover::before {
+            opacity: 1;
+        }
+
+        .img-container img {
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .img-container:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Section Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        .line-reveal {
-            position: relative;
-            overflow: hidden;
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Stagger Animation */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
-        .line-reveal::after {
+
+        .stagger-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Badge */
+        .floating-badge {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Decorative Elements */
+        .deco-blob {
+            position: absolute;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.15), rgba(232, 201, 160, 0.1));
+            filter: blur(40px);
+        }
+
+        .deco-ring {
+            position: absolute;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 50%;
+        }
+
+        .deco-dots {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: radial-gradient(circle, rgba(212, 165, 116, 0.3) 1px, transparent 1px);
+            background-size: 12px 12px;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--brand-primary-light), var(--brand-primary), var(--brand-primary-light), transparent);
+            opacity: 0.3;
+        }
+
+        /* Premium Hover Effects */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Gradient Background Animation */
+        .gradient-animated {
+            background: linear-gradient(-45deg, #FFFBF5, #F5E6D3, #E8C9A0, #D4A574);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* Premium Shadow */
+        .shadow-premium {
+            box-shadow: 
+                0 4px 6px -1px rgba(61, 43, 31, 0.05),
+                0 10px 15px -3px rgba(61, 43, 31, 0.08),
+                0 20px 25px -5px rgba(61, 43, 31, 0.05);
+        }
+
+        .shadow-premium-lg {
+            box-shadow: 
+                0 10px 15px -3px rgba(61, 43, 31, 0.08),
+                0 20px 25px -5px rgba(61, 43, 31, 0.1),
+                0 40px 50px -12px rgba(61, 43, 31, 0.15);
+        }
+
+        /* WhatsApp Pulse */
+        .whatsapp-pulse {
+            position: relative;
+        }
+
+        .whatsapp-pulse::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #D4A574, #E8C9A0);
-            transition: width 0.6s ease-out;
+            inset: -4px;
+            border-radius: 50%;
+            background: rgba(37, 211, 102, 0.4);
+            animation: pulse-ring 2s ease-out infinite;
         }
-        
-        .line-reveal.revealed::after {
-            width: 100%;
-        }
-        
-        .instagram-embed {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .video-card {
+
+        /* Video Card Premium */
+        .video-card-premium {
             position: relative;
+            border-radius: 24px;
             overflow: hidden;
-            border-radius: 16px;
+            aspect-ratio: 9/16;
         }
-        
-        .video-card::before {
+
+        .video-card-premium::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(61, 43, 31, 0.7), transparent);
+            background: linear-gradient(180deg, transparent 30%, rgba(61, 43, 31, 0.8) 100%);
             z-index: 1;
         }
-        
-        .video-card video {
-            transition: transform 0.5s ease;
+
+        .video-card-premium video {
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
-        .video-card:hover video {
+
+        .video-card-premium:hover video {
             transform: scale(1.1);
         }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #D4A574 0%, #B8834A 100%);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+
+        /* Play Button */
+        .play-btn-premium {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, #B8834A 0%, #D4A574 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+
+        .play-btn-premium:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
-        
-        .btn-primary:hover::before {
-            opacity: 1;
+
+        .play-btn-premium i {
+            color: var(--brand-primary-dark);
+            font-size: 24px;
+            margin-right: -3px;
         }
-        
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
+
+        /* Contact Card */
+        .contact-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 0.4s ease;
         }
-        
-        .scroll-indicator {
-            animation: bounce 2s infinite;
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
         }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-10px) translateX(-50%); }
-            60% { transform: translateY(-5px) translateX(-50%); }
+
+        /* Feature Icon */
+        .feature-icon-premium {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+            transition: all 0.4s ease;
         }
-        
-        .image-3d {
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
+
+        .feature-icon-premium:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
         }
-        
-        .image-3d:hover {
-            transform: rotateY(-5deg) rotateX(5deg);
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
-        .blob-shape {
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+        .mobile-menu.active {
+            transform: translateX(0);
         }
-        
-        .mesh-gradient {
-            background: 
-                radial-gradient(at 40% 20%, rgba(212, 165, 116, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(232, 201, 160, 0.3) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(201, 149, 107, 0.2) 0px, transparent 50%),
-                radial-gradient(at 80% 50%, rgba(212, 165, 116, 0.2) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(232, 201, 160, 0.3) 0px, transparent 50%);
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #F5E6D3;
-            border-radius: 10px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #D4A574;
-            border-radius: 10px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #B8834A;
-        }
-        
-        .feature-icon {
-            background: linear-gradient(135deg, #D4A574 0%, #E8C9A0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        /* Smooth Transitions */
+        .transition-premium {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
     </style>
 </head>
-<body class="font-tajawal text-brand-text antialiased">
+<body class="font-tajawal text-brand-900 antialiased">
     
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[9999] bg-brand-cream flex items-center justify-center transition-opacity duration-500">
+    <!-- ==================== PRELOADER ==================== -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-cream flex items-center justify-center">
         <div class="text-center">
-            <div class="inline-block animate-bounce">
-                <span class="text-6xl">👩🏻‍🍳</span>
+            <div class="relative inline-block">
+                <div class="absolute inset-0 bg-brand-400/20 rounded-full blur-xl animate-pulse"></div>
+                <div class="relative animate-bounce">
+                    <span class="text-7xl">👩🏻‍🍳</span>
+                </div>
             </div>
-            <h2 class="mt-4 text-2xl font-bold text-gradient">فايا للمخبوزات</h2>
-            <p class="mt-2 text-brand-text-light">جاري التحميل...</p>
-            <div class="mt-4 w-48 h-1 bg-brand-secondary-dark rounded-full mx-auto overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-brand-primary to-brand-accent rounded-full animate-pulse"></div>
+            <h2 class="mt-6 text-3xl font-bold text-gradient">فايا للمخبوزات</h2>
+            <p class="mt-2 text-brand-700 font-light">جاري التحميل...</p>
+            <div class="mt-6 w-48 h-1 bg-brand-200 rounded-full mx-auto overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-brand-400 to-brand-600 rounded-full" style="animation: shimmer 1.5s infinite; background-size: 200% 100%; background-image: linear-gradient(90deg, var(--brand-primary), var(--brand-primary-dark), var(--brand-primary));"></div>
             </div>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <div class="flex items-center gap-3">
-                    <span class="text-4xl">👩🏻‍🍳</span>
-                    <div>
-                        <h1 class="text-xl font-bold text-brand-text">Faya</h1>
-                        <p class="text-xs text-brand-text-light">Bakery</p>
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-400/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+                        <div class="relative w-12 h-12 bg-gradient-to-br from-brand-400 to-brand-600 rounded-full flex items-center justify-center shadow-lg">
+                            <span class="text-2xl">👩🏻‍🍳</span>
+                        </div>
                     </div>
-                </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Faya</h1>
+                        <p class="text-xs text-brand-600 font-medium -mt-1">Bakery</p>
+                    </div>
+                </a>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#home" class="text-brand-text hover:text-brand-primary transition-colors font-medium">الرئيسية</a>
-                    <a href="#about" class="text-brand-text hover:text-brand-primary transition-colors font-medium">من نحن</a>
-                    <a href="#products" class="text-brand-text hover:text-brand-primary transition-colors font-medium">منتجاتنا</a>
-                    <a href="#videos" class="text-brand-text hover:text-brand-primary transition-colors font-medium">الفيديوهات</a>
-                    <a href="#contact" class="text-brand-text hover:text-brand-primary transition-colors font-medium">تواصل معنا</a>
-                    <a href="https://wa.me/966537383363" target="_blank" class="btn-primary px-6 py-3 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
-                        <span class="flex items-center gap-2">
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#home" class="px-4 py-2 text-brand-700 hover:text-brand-500 transition-colors font-medium rounded-lg hover:bg-brand-100/50">الرئيسية</a>
+                    <a href="#about" class="px-4 py-2 text-brand-700 hover:text-brand-500 transition-colors font-medium rounded-lg hover:bg-brand-100/50">من نحن</a>
+                    <a href="#products" class="px-4 py-2 text-brand-700 hover:text-brand-500 transition-colors font-medium rounded-lg hover:bg-brand-100/50">منتجاتنا</a>
+                    <a href="#videos" class="px-4 py-2 text-brand-700 hover:text-brand-500 transition-colors font-medium rounded-lg hover:bg-brand-100/50">الفيديوهات</a>
+                    <a href="#contact" class="px-4 py-2 text-brand-700 hover:text-brand-500 transition-colors font-medium rounded-lg hover:bg-brand-100/50">تواصل معنا</a>
+                    <a href="https://wa.me/966537383363" target="_blank" class="btn-premium mr-4 px-6 py-3 rounded-full text-white font-bold shadow-lg">
+                        <span class="flex items-center gap-2 relative z-10">
                             <i class="fab fa-whatsapp text-lg"></i>
                             اطلب الآن
                         </span>
@@ -361,67 +586,106 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-brand-secondary transition-colors">
-                    <i class="fas fa-bars text-xl text-brand-text"></i>
+                <button id="mobile-menu-btn" class="lg:hidden p-3 rounded-xl hover:bg-brand-100 transition-colors">
+                    <div class="w-6 h-5 flex flex-col justify-between">
+                        <span class="w-full h-0.5 bg-brand-700 rounded-full transition-all" id="bar1"></span>
+                        <span class="w-full h-0.5 bg-brand-700 rounded-full transition-all" id="bar2"></span>
+                        <span class="w-full h-0.5 bg-brand-700 rounded-full transition-all" id="bar3"></span>
+                    </div>
                 </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-brand-secondary-dark">
-            <div class="px-4 py-6 space-y-4">
-                <a href="#home" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">الرئيسية</a>
-                <a href="#about" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">من نحن</a>
-                <a href="#products" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">منتجاتنا</a>
-                <a href="#videos" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">الفيديوهات</a>
-                <a href="#contact" class="block py-3 px-4 text-brand-text hover:bg-brand-secondary rounded-lg transition-colors font-medium">تواصل معنا</a>
-                <a href="https://wa.me/966537383363" target="_blank" class="block btn-primary py-3 px-4 rounded-xl text-white font-bold text-center">
-                    <i class="fab fa-whatsapp ml-2"></i>
-                    اطلب الآن عبر الواتساب
-                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen hero-gradient overflow-hidden">
-        <!-- Background Decorations -->
-        <div class="absolute inset-0 mesh-gradient"></div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-white z-[60] shadow-2xl mobile-menu lg:hidden">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-400 to-brand-600 rounded-full flex items-center justify-center">
+                        <span class="text-lg">👩🏻‍🍳</span>
+                    </div>
+                    <span class="font-bold text-brand-900">Faya Bakery</span>
+                </div>
+                <button id="close-menu" class="p-2 rounded-lg hover:bg-brand-100 transition-colors">
+                    <i class="fas fa-times text-brand-700 text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-2">
+                <a href="#home" class="mobile-nav-link block py-4 px-4 text-brand-700 hover:bg-brand-100 rounded-xl transition-all font-medium">الرئيسية</a>
+                <a href="#about" class="mobile-nav-link block py-4 px-4 text-brand-700 hover:bg-brand-100 rounded-xl transition-all font-medium">من نحن</a>
+                <a href="#products" class="mobile-nav-link block py-4 px-4 text-brand-700 hover:bg-brand-100 rounded-xl transition-all font-medium">منتجاتنا</a>
+                <a href="#videos" class="mobile-nav-link block py-4 px-4 text-brand-700 hover:bg-brand-100 rounded-xl transition-all font-medium">الفيديوهات</a>
+                <a href="#contact" class="mobile-nav-link block py-4 px-4 text-brand-700 hover:bg-brand-100 rounded-xl transition-all font-medium">تواصل معنا</a>
+            </div>
+            
+            <div class="mt-8">
+                <a href="https://wa.me/966537383363" target="_blank" class="btn-premium block py-4 px-6 rounded-2xl text-white font-bold text-center">
+                    <span class="flex items-center justify-center gap-3 relative z-10">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        اطلب عبر الواتساب
+                    </span>
+                </a>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-brand-200">
+                <p class="text-brand-600 text-sm text-center">📍 جدة، المملكة العربية السعودية</p>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-[55] hidden lg:hidden"></div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="relative min-h-screen overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 gradient-animated"></div>
         
-        <!-- Floating Elements -->
-        <div class="absolute top-20 right-10 w-32 h-32 bg-brand-primary/10 rounded-full blur-3xl floating"></div>
-        <div class="absolute top-40 left-20 w-48 h-48 bg-brand-accent/10 rounded-full blur-3xl floating-delay-1"></div>
-        <div class="absolute bottom-20 right-1/4 w-40 h-40 bg-brand-primary-light/20 rounded-full blur-3xl floating-delay-2"></div>
+        <!-- Decorative Elements -->
+        <div class="deco-blob w-[600px] h-[600px] -top-40 -right-40 opacity-60"></div>
+        <div class="deco-blob w-[500px] h-[500px] -bottom-32 -left-32 opacity-50"></div>
+        <div class="deco-dots top-32 left-20 opacity-30"></div>
+        <div class="deco-dots bottom-40 right-32 opacity-20"></div>
+        <div class="deco-ring w-96 h-96 top-20 -left-48 opacity-20"></div>
+        <div class="deco-ring w-64 h-64 bottom-32 -right-32 opacity-15"></div>
         
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 min-h-screen flex items-center">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
                 <!-- Text Content -->
                 <div class="text-center lg:text-right order-2 lg:order-1">
-                    <div class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full mb-6 shadow-sm">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        <span class="text-sm font-medium text-brand-text-light">مخبوزات طازجة يومياً</span>
+                    <!-- Badge -->
+                    <div class="reveal inline-flex items-center gap-3 bg-white/70 backdrop-blur-lg px-5 py-3 rounded-full mb-8 shadow-premium">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        <span class="text-sm font-semibold text-brand-700">مخبوزات طازجة يومياً</span>
                     </div>
                     
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-text leading-tight mb-6">
+                    <!-- Headline -->
+                    <h1 class="reveal reveal-delay-1 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-brand-900 leading-[1.1] mb-6">
                         <span class="block">فايا</span>
-                        <span class="text-gradient font-playfair">للمخبوزات</span>
+                        <span class="block text-gradient">للمخبوزات</span>
                     </h1>
                     
-                    <p class="text-lg sm:text-xl text-brand-text-light mb-8 max-w-lg mx-auto lg:mx-0 lg:max-w-none">
+                    <!-- Subheadline -->
+                    <p class="reveal reveal-delay-2 text-xl sm:text-2xl text-brand-700 mb-10 max-w-xl mx-auto lg:mx-0 lg:max-w-none font-light leading-relaxed">
                         أشهى المخبوزات والحلويات الطازجة في جدة
                         <br>
-                        <span class="font-bold text-brand-primary">توصيل مجاني</span> لجميع أنحاء المدينة
+                        <span class="font-bold text-brand-500">توصيل مجاني</span> لجميع أنحاء المدينة
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="https://wa.me/966537383363" target="_blank" class="btn-primary px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
-                            <span class="flex items-center justify-center gap-3">
+                    <!-- CTA Buttons -->
+                    <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/966537383363" target="_blank" class="btn-premium px-10 py-5 rounded-full text-white font-bold text-lg shadow-premium-lg">
+                            <span class="flex items-center justify-center gap-3 relative z-10">
                                 <i class="fab fa-whatsapp text-2xl"></i>
                                 اطلب عبر الواتساب
                             </span>
                         </a>
-                        <a href="#products" class="px-8 py-4 rounded-full border-2 border-brand-primary text-brand-primary font-bold text-lg hover:bg-brand-primary hover:text-white transition-all">
-                            <span class="flex items-center justify-center gap-2">
+                        <a href="#products" class="btn-outline-premium px-10 py-5 rounded-full text-brand-700 font-bold text-lg">
+                            <span class="flex items-center justify-center gap-2 relative z-10">
                                 <i class="fas fa-eye"></i>
                                 شاهد المنتجات
                             </span>
@@ -429,136 +693,171 @@
                     </div>
                     
                     <!-- Stats -->
-                    <div class="flex items-center justify-center lg:justify-start gap-8 mt-12">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-brand-primary">183+</div>
-                            <div class="text-sm text-brand-text-light">متابع</div>
+                    <div class="reveal reveal-delay-4 flex items-center justify-center lg:justify-start gap-10 mt-14">
+                        <div class="text-center group cursor-default">
+                            <div class="text-4xl font-black text-brand-500 group-hover:scale-110 transition-transform">183+</div>
+                            <div class="text-sm text-brand-600 font-medium mt-1">متابع</div>
                         </div>
-                        <div class="w-px h-12 bg-brand-primary/30"></div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-brand-primary">مجاني</div>
-                            <div class="text-sm text-brand-text-light">التوصيل</div>
+                        <div class="w-px h-14 bg-gradient-to-b from-transparent via-brand-300 to-transparent"></div>
+                        <div class="text-center group cursor-default">
+                            <div class="text-4xl font-black text-brand-500 group-hover:scale-110 transition-transform">مجاني</div>
+                            <div class="text-sm text-brand-600 font-medium mt-1">التوصيل</div>
                         </div>
-                        <div class="w-px h-12 bg-brand-primary/30"></div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-brand-primary">جدة</div>
-                            <div class="text-sm text-brand-text-light">المدينة</div>
+                        <div class="w-px h-14 bg-gradient-to-b from-transparent via-brand-300 to-transparent"></div>
+                        <div class="text-center group cursor-default">
+                            <div class="text-4xl font-black text-brand-500 group-hover:scale-110 transition-transform">جدة</div>
+                            <div class="text-sm text-brand-600 font-medium mt-1">المدينة</div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Image -->
                 <div class="order-1 lg:order-2 relative">
-                    <div class="relative z-10">
-                        <div class="image-3d rounded-3xl overflow-hidden shadow-2xl">
-                            <img src="images/post1.jpg" alt="كيك شوكولاتة فاخر" class="w-full h-auto object-cover">
+                    <div class="reveal relative z-10">
+                        <!-- Main Image -->
+                        <div class="relative rounded-[32px] overflow-hidden shadow-premium-lg">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/30 to-transparent z-10"></div>
+                            <img src="images/post1.jpg" alt="كيك شوكولاتة فاخر" class="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover">
+                        </div>
+                        
+                        <!-- Floating Card 1 -->
+                        <div class="absolute -bottom-8 -left-8 lg:-left-16 bg-white rounded-2xl p-5 shadow-premium-lg z-20 floating-badge">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 bg-gradient-to-br from-brand-100 to-brand-200 rounded-xl flex items-center justify-center">
+                                    <span class="text-3xl">🎂</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-brand-900 text-lg">كيك مميز</div>
+                                    <div class="text-sm text-brand-600">طازج يومياً</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -top-6 -right-6 lg:-right-12 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-8 py-4 rounded-2xl shadow-premium-lg z-20 floating-badge" style="animation-delay: 1s;">
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl">🔥</span>
+                                <span class="font-bold text-lg">الأفضل في جدة</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Floating Card -->
-                    <div class="absolute -bottom-6 -left-6 lg:-left-12 bg-white rounded-2xl p-4 shadow-xl floating z-20">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center">
-                                <span class="text-2xl">🎂</span>
-                            </div>
-                            <div>
-                                <div class="font-bold text-brand-text">كيك مميز</div>
-                                <div class="text-sm text-brand-text-light">طازج يومياً</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Floating Badge -->
-                    <div class="absolute -top-4 -right-4 lg:-right-8 bg-brand-primary text-white px-6 py-3 rounded-full shadow-lg floating-delay-1 z-20">
-                        <span class="font-bold">🔥 الأفضل في جدة</span>
-                    </div>
+                    <!-- Decorative Circle -->
+                    <div class="absolute -inset-4 border-2 border-brand-300/30 rounded-[40px] -z-10"></div>
+                    <div class="absolute -inset-8 border border-brand-200/20 rounded-[48px] -z-10"></div>
                 </div>
             </div>
         </div>
         
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
-            <a href="#about" class="flex flex-col items-center text-brand-text-light hover:text-brand-primary transition-colors">
-                <span class="text-sm mb-2">اكتشف المزيد</span>
-                <i class="fas fa-chevron-down text-xl"></i>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+            <a href="#about" class="flex flex-col items-center gap-2 text-brand-600 hover:text-brand-500 transition-colors group">
+                <span class="text-sm font-medium">اكتشف المزيد</span>
+                <div class="w-8 h-12 border-2 border-brand-400 rounded-full flex justify-center pt-2 group-hover:border-brand-500 transition-colors">
+                    <div class="w-1.5 h-3 bg-brand-400 rounded-full animate-bounce"></div>
+                </div>
             </a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary-light"></div>
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="py-24 lg:py-32 bg-white relative overflow-hidden">
+        <!-- Decorative -->
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-300 to-transparent"></div>
+        <div class="deco-blob w-[400px] h-[400px] -top-48 -right-48 opacity-30"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 <!-- Image -->
-                <div class="section-reveal">
+                <div class="reveal relative">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-brand-primary/10 transform rotate-6 rounded-3xl"></div>
-                        <div class="relative image-3d rounded-3xl overflow-hidden shadow-xl">
-                            <img src="images/profile.jpg" alt="فايا للمخبوزات" class="w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-200 to-brand-300 transform rotate-3 rounded-[32px]"></div>
+                        <div class="relative rounded-[32px] overflow-hidden shadow-premium-lg">
+                            <img src="images/profile.jpg" alt="فايا للمخبوزات" class="w-full h-[450px] lg:h-[550px] object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-8 -right-8 lg:-right-12 glass rounded-2xl p-6 shadow-premium-lg floating-badge">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center">
+                                <span class="text-3xl">✨</span>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-black text-brand-900">100%</div>
+                                <div class="text-sm text-brand-600 font-medium">جودة مضمونة</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Content -->
-                <div class="section-reveal">
-                    <span class="inline-block text-brand-primary font-bold text-lg mb-2">من نحن</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-text mb-6">
+                <div class="reveal">
+                    <span class="inline-block text-brand-500 font-bold text-lg mb-4 tracking-wide">من نحن</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-900 mb-8 leading-tight">
                         مخبوزات وحلويات
-                        <span class="text-gradient">فايا</span>
+                        <span class="block text-gradient">فايا</span>
                     </h2>
                     
-                    <p class="text-lg text-brand-text-light mb-6 leading-relaxed">
-                        نحن في <span class="font-bold text-brand-primary">فايا للمخبوزات</span> نقدم لكم أشهى المخبوزات والحلويات الطازجة يومياً. نستخدم أجود المكونات الطبيعية لضمان جودة منتجاتنا التي تنال إعجاب عملائنا.
+                    <p class="text-xl text-brand-700 mb-6 leading-relaxed font-light">
+                        نحن في <span class="font-bold text-brand-500">فايا للمخبوزات</span> نقدم لكم أشهى المخبوزات والحلويات الطازجة يومياً. نستخدم أجود المكونات الطبيعية لضمان جودة منتجاتنا التي تنال إعجاب عملائنا.
                     </p>
                     
-                    <p class="text-lg text-brand-text-light mb-8 leading-relaxed">
+                    <p class="text-lg text-brand-600 mb-10 leading-relaxed">
                         نسعى دائماً لتقديم تجربة فريدة لعملائنا من خلال منتجات متنوعة وخدمة توصيل مجانية في جميع أنحاء مدينة جدة.
                     </p>
                     
-                    <!-- Features -->
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center gap-3 p-3 bg-brand-secondary rounded-xl">
-                            <span class="text-2xl">✨</span>
-                            <span class="font-medium">طازج يومياً</span>
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-2 gap-4 mb-10">
+                        <div class="flex items-center gap-4 p-4 bg-brand-50 rounded-2xl hover:bg-brand-100 transition-colors">
+                            <div class="w-12 h-12 bg-brand-200 rounded-xl flex items-center justify-center">
+                                <span class="text-2xl">✨</span>
+                            </div>
+                            <span class="font-semibold text-brand-800">طازج يومياً</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 bg-brand-secondary rounded-xl">
-                            <span class="text-2xl">🚚</span>
-                            <span class="font-medium">توصيل مجاني</span>
+                        <div class="flex items-center gap-4 p-4 bg-brand-50 rounded-2xl hover:bg-brand-100 transition-colors">
+                            <div class="w-12 h-12 bg-brand-200 rounded-xl flex items-center justify-center">
+                                <span class="text-2xl">🚚</span>
+                            </div>
+                            <span class="font-semibold text-brand-800">توصيل مجاني</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 bg-brand-secondary rounded-xl">
-                            <span class="text-2xl">💯</span>
-                            <span class="font-medium">جودة عالية</span>
+                        <div class="flex items-center gap-4 p-4 bg-brand-50 rounded-2xl hover:bg-brand-100 transition-colors">
+                            <div class="w-12 h-12 bg-brand-200 rounded-xl flex items-center justify-center">
+                                <span class="text-2xl">💯</span>
+                            </div>
+                            <span class="font-semibold text-brand-800">جودة عالية</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 bg-brand-secondary rounded-xl">
-                            <span class="text-2xl">📍</span>
-                            <span class="font-medium">جدة</span>
+                        <div class="flex items-center gap-4 p-4 bg-brand-50 rounded-2xl hover:bg-brand-100 transition-colors">
+                            <div class="w-12 h-12 bg-brand-200 rounded-xl flex items-center justify-center">
+                                <span class="text-2xl">📍</span>
+                            </div>
+                            <span class="font-semibold text-brand-800">جدة</span>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/966537383363" target="_blank" class="inline-flex items-center gap-2 btn-primary px-8 py-4 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                        تواصل معنا الآن
+                    <a href="https://wa.me/966537383363" target="_blank" class="btn-premium inline-flex items-center gap-3 px-10 py-5 rounded-full text-white font-bold text-lg shadow-premium-lg">
+                        <i class="fab fa-whatsapp text-2xl relative z-10"></i>
+                        <span class="relative z-10">تواصل معنا الآن</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-20 bg-brand-secondary relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl"></div>
+    <!-- ==================== PRODUCTS SECTION ==================== -->
+    <section id="products" class="py-24 lg:py-32 bg-brand-50 relative overflow-hidden">
+        <!-- Decorative -->
+        <div class="deco-blob w-[500px] h-[500px] -top-40 -left-40 opacity-30"></div>
+        <div class="deco-dots bottom-20 right-10 opacity-20"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Header -->
-            <div class="text-center mb-16 section-reveal">
-                <span class="inline-block text-brand-primary font-bold text-lg mb-2 line-reveal">منتجاتنا</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
+            <div class="text-center mb-16 lg:mb-20">
+                <span class="reveal inline-block text-brand-500 font-bold text-lg mb-4 tracking-wide">منتجاتنا</span>
+                <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-black text-brand-900 mb-6">
                     أشهى <span class="text-gradient">المخبوزات والحلويات</span>
                 </h2>
-                <p class="text-lg text-brand-text-light max-w-2xl mx-auto">
+                <p class="reveal reveal-delay-2 text-xl text-brand-600 max-w-2xl mx-auto font-light">
                     تشكيلة متنوعة من المخبوزات الطازجة والحلويات الفاخرة المحضرة بأجود المكونات
                 </p>
             </div>
@@ -566,117 +865,107 @@
             <!-- Products Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
-                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="images/post1.jpg" alt="كيك شوكولاتة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
-                            مميز
-                        </div>
+                <div class="stagger-item card-premium">
+                    <div class="img-container h-72">
+                        <img src="images/post1.jpg" alt="كيك شوكولاتة" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 z-20 bg-brand-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">مميز</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-text mb-2">كيك شوكولاتة</h3>
-                        <p class="text-brand-text-light mb-4">كيك شوكولاتة فاخر بأسعار مناسبة</p>
+                        <h3 class="text-xl font-bold text-brand-900 mb-2">كيك شوكولاتة</h3>
+                        <p class="text-brand-600 mb-4">كيك شوكولاتة فاخر بأسعار مناسبة</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 80 ريال</span>
-                            <a href="https://wa.me/966537383363?text=أبي أطلب كيك شوكولاتة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
-                                <i class="fab fa-whatsapp"></i>
+                            <span class="text-brand-500 font-bold text-lg">ابتداءً من 80 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب كيك شوكولاتة" target="_blank" class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                                <i class="fab fa-whatsapp text-brand-600"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
-                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="images/post2.jpg" alt="حلويات متنوعة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
-                            الأكثر طلباً
-                        </div>
+                <div class="stagger-item card-premium">
+                    <div class="img-container h-72">
+                        <img src="images/post2.jpg" alt="حلويات متنوعة" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 z-20 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">الأكثر طلباً</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-text mb-2">حلويات متنوعة</h3>
-                        <p class="text-brand-text-light mb-4">تشكيلة فاخرة من أشهى الحلويات</p>
+                        <h3 class="text-xl font-bold text-brand-900 mb-2">حلويات متنوعة</h3>
+                        <p class="text-brand-600 mb-4">تشكيلة فاخرة من أشهى الحلويات</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 50 ريال</span>
-                            <a href="https://wa.me/966537383363?text=أبي أطلب حلويات متنوعة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
-                                <i class="fab fa-whatsapp"></i>
+                            <span class="text-brand-500 font-bold text-lg">ابتداءً من 50 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب حلويات متنوعة" target="_blank" class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                                <i class="fab fa-whatsapp text-brand-600"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
-                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="images/post3.jpg" alt="مخبوزات طازجة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
-                            طازج
-                        </div>
+                <div class="stagger-item card-premium">
+                    <div class="img-container h-72">
+                        <img src="images/post3.jpg" alt="مخبوزات طازجة" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 z-20 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">طازج</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-text mb-2">مخبوزات طازجة</h3>
-                        <p class="text-brand-text-light mb-4">مخبوزات طازجة يومياً من أفضل المكونات</p>
+                        <h3 class="text-xl font-bold text-brand-900 mb-2">مخبوزات طازجة</h3>
+                        <p class="text-brand-600 mb-4">مخبوزات طازجة يومياً من أفضل المكونات</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 15 ريال</span>
-                            <a href="https://wa.me/966537383363?text=أبي أطلب مخبوزات طازجة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
-                                <i class="fab fa-whatsapp"></i>
+                            <span class="text-brand-500 font-bold text-lg">ابتداءً من 15 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب مخبوزات طازجة" target="_blank" class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                                <i class="fab fa-whatsapp text-brand-600"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Product 4 -->
-                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="images/post4.jpg" alt="معجنات حلوة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                <div class="stagger-item card-premium">
+                    <div class="img-container h-72">
+                        <img src="images/post4.jpg" alt="معجنات حلوة" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-text mb-2">معجنات حلوة</h3>
-                        <p class="text-brand-text-light mb-4">معجنات حلوة بحشوات متنوعة</p>
+                        <h3 class="text-xl font-bold text-brand-900 mb-2">معجنات حلوة</h3>
+                        <p class="text-brand-600 mb-4">معجنات حلوة بحشوات متنوعة</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 10 ريال</span>
-                            <a href="https://wa.me/966537383363?text=أبي أطلب معجنات حلوة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
-                                <i class="fab fa-whatsapp"></i>
+                            <span class="text-brand-500 font-bold text-lg">ابتداءً من 10 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب معجنات حلوة" target="_blank" class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                                <i class="fab fa-whatsapp text-brand-600"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Product 5 -->
-                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="images/post5.jpg" alt="كيك بالكريمة" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
-                            للمناسبات
-                        </div>
+                <div class="stagger-item card-premium">
+                    <div class="img-container h-72">
+                        <img src="images/post5.jpg" alt="كيك بالكريمة" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 z-20 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">للمناسبات</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-text mb-2">كيك بالكريمة</h3>
-                        <p class="text-brand-text-light mb-4">كيك كريمة فاخر للمناسبات</p>
+                        <h3 class="text-xl font-bold text-brand-900 mb-2">كيك بالكريمة</h3>
+                        <p class="text-brand-600 mb-4">كيك كريمة فاخر للمناسبات</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 100 ريال</span>
-                            <a href="https://wa.me/966537383363?text=أبي أطلب كيك بالكريمة" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
-                                <i class="fab fa-whatsapp"></i>
+                            <span class="text-brand-500 font-bold text-lg">ابتداءً من 100 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب كيك بالكريمة" target="_blank" class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                                <i class="fab fa-whatsapp text-brand-600"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Product 6 -->
-                <div class="section-reveal bg-white rounded-3xl overflow-hidden shadow-lg card-hover glow-effect">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="images/post6.jpg" alt="صواني حلويات" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                        <div class="absolute top-4 right-4 bg-brand-primary text-white px-4 py-2 rounded-full text-sm font-bold">
-                            صواني
-                        </div>
+                <div class="stagger-item card-premium">
+                    <div class="img-container h-72">
+                        <img src="images/post6.jpg" alt="صواني حلويات" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 z-20 bg-gradient-to-r from-violet-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">صواني</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-text mb-2">صواني حلويات</h3>
-                        <p class="text-brand-text-light mb-4">صواني حلويات للمناسبات والحفلات</p>
+                        <h3 class="text-xl font-bold text-brand-900 mb-2">صواني حلويات</h3>
+                        <p class="text-brand-600 mb-4">صواني حلويات للمناسبات والحفلات</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-brand-primary font-bold text-lg">ابتداءً من 120 ريال</span>
-                            <a href="https://wa.me/966537383363?text=أبي أطلب صواني حلويات" target="_blank" class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
-                                <i class="fab fa-whatsapp"></i>
+                            <span class="text-brand-500 font-bold text-lg">ابتداءً من 120 ريال</span>
+                            <a href="https://wa.me/966537383363?text=أبي أطلب صواني حلويات" target="_blank" class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all">
+                                <i class="fab fa-whatsapp text-brand-600"></i>
                             </a>
                         </div>
                     </div>
@@ -685,16 +974,16 @@
         </div>
     </section>
 
-    <!-- Videos Section -->
-    <section id="videos" class="py-20 bg-white relative overflow-hidden">
+    <!-- ==================== VIDEOS SECTION ==================== -->
+    <section id="videos" class="py-24 lg:py-32 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
-            <div class="text-center mb-16 section-reveal">
-                <span class="inline-block text-brand-primary font-bold text-lg mb-2 line-reveal">الفيديوهات</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
+            <div class="text-center mb-16 lg:mb-20">
+                <span class="reveal inline-block text-brand-500 font-bold text-lg mb-4 tracking-wide">الفيديوهات</span>
+                <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-black text-brand-900 mb-6">
                     شاهد <span class="text-gradient">إبداعاتنا</span>
                 </h2>
-                <p class="text-lg text-brand-text-light max-w-2xl mx-auto">
+                <p class="reveal reveal-delay-2 text-xl text-brand-600 max-w-2xl mx-auto font-light">
                     مقاطع فيديو من حسابنا على الإنستغرام
                 </p>
             </div>
@@ -702,61 +991,61 @@
             <!-- Videos Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Video 1 -->
-                <div class="section-reveal video-card aspect-[9/16] rounded-2xl overflow-hidden shadow-lg card-hover">
+                <div class="stagger-item video-card-premium shadow-premium-lg group">
                     <video src="videos/video1.mp4" class="w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
-                    <div class="absolute inset-0 flex items-center justify-center z-10">
-                        <button class="play-btn w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
-                            <i class="fas fa-play text-brand-primary text-xl mr-1"></i>
+                    <div class="absolute inset-0 flex items-center justify-center z-20">
+                        <button class="play-btn-premium group-hover:scale-110 transition-transform">
+                            <i class="fas fa-play"></i>
                         </button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
-                        <span class="text-white font-bold">مخبوزات طازجة</span>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 z-20">
+                        <span class="text-white font-bold text-lg">مخبوزات طازجة</span>
                     </div>
                 </div>
                 
                 <!-- Video 2 -->
-                <div class="section-reveal video-card aspect-[9/16] rounded-2xl overflow-hidden shadow-lg card-hover">
+                <div class="stagger-item video-card-premium shadow-premium-lg group">
                     <video src="videos/video2.mp4" class="w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
-                    <div class="absolute inset-0 flex items-center justify-center z-10">
-                        <button class="play-btn w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
-                            <i class="fas fa-play text-brand-primary text-xl mr-1"></i>
+                    <div class="absolute inset-0 flex items-center justify-center z-20">
+                        <button class="play-btn-premium group-hover:scale-110 transition-transform">
+                            <i class="fas fa-play"></i>
                         </button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
-                        <span class="text-white font-bold">تحضير حلويات</span>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 z-20">
+                        <span class="text-white font-bold text-lg">تحضير حلويات</span>
                     </div>
                 </div>
                 
                 <!-- Video 3 -->
-                <div class="section-reveal video-card aspect-[9/16] rounded-2xl overflow-hidden shadow-lg card-hover">
+                <div class="stagger-item video-card-premium shadow-premium-lg group">
                     <video src="videos/video3.mp4" class="w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
-                    <div class="absolute inset-0 flex items-center justify-center z-10">
-                        <button class="play-btn w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
-                            <i class="fas fa-play text-brand-primary text-xl mr-1"></i>
+                    <div class="absolute inset-0 flex items-center justify-center z-20">
+                        <button class="play-btn-premium group-hover:scale-110 transition-transform">
+                            <i class="fas fa-play"></i>
                         </button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
-                        <span class="text-white font-bold">منتجاتنا المميزة</span>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 z-20">
+                        <span class="text-white font-bold text-lg">منتجاتنا المميزة</span>
                     </div>
                 </div>
                 
                 <!-- Video 4 -->
-                <div class="section-reveal video-card aspect-[9/16] rounded-2xl overflow-hidden shadow-lg card-hover">
+                <div class="stagger-item video-card-premium shadow-premium-lg group">
                     <video src="videos/video4.mp4" class="w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
-                    <div class="absolute inset-0 flex items-center justify-center z-10">
-                        <button class="play-btn w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
-                            <i class="fas fa-play text-brand-primary text-xl mr-1"></i>
+                    <div class="absolute inset-0 flex items-center justify-center z-20">
+                        <button class="play-btn-premium group-hover:scale-110 transition-transform">
+                            <i class="fas fa-play"></i>
                         </button>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
-                        <span class="text-white font-bold">عرض الحلويات</span>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 z-20">
+                        <span class="text-white font-bold text-lg">عرض الحلويات</span>
                     </div>
                 </div>
             </div>
             
-            <!-- Instagram Feed -->
-            <div class="mt-16 text-center section-reveal">
-                <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
+            <!-- Instagram CTA -->
+            <div class="reveal mt-16 text-center">
+                <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="inline-flex items-center gap-4 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white px-10 py-5 rounded-full font-bold text-lg shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-500">
                     <i class="fab fa-instagram text-2xl"></i>
                     تابعنا على الإنستغرام
                 </a>
@@ -764,133 +1053,146 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-20 bg-brand-secondary relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 section-reveal">
-                <span class="inline-block text-brand-primary font-bold text-lg mb-2 line-reveal">مميزاتنا</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
+    <!-- ==================== FEATURES SECTION ==================== -->
+    <section class="py-24 lg:py-32 bg-brand-50 relative overflow-hidden">
+        <div class="deco-blob w-[400px] h-[400px] -bottom-48 -left-48 opacity-30"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 lg:mb-20">
+                <span class="reveal inline-block text-brand-500 font-bold text-lg mb-4 tracking-wide">مميزاتنا</span>
+                <h2 class="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-black text-brand-900 mb-6">
                     لماذا <span class="text-gradient">فايا</span>؟
                 </h2>
             </div>
             
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Feature 1 -->
-                <div class="section-reveal text-center p-8 bg-white rounded-3xl shadow-lg card-hover">
-                    <div class="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-4xl">🚚</span>
+                <div class="stagger-item text-center p-8 bg-white rounded-3xl shadow-premium hover-lift">
+                    <div class="feature-icon-premium mx-auto mb-6">
+                        <span>🚚</span>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-text mb-3">توصيل مجاني</h3>
-                    <p class="text-brand-text-light">توصيل مجاني لجميع أنحاء جدة</p>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">توصيل مجاني</h3>
+                    <p class="text-brand-600">توصيل مجاني لجميع أنحاء جدة</p>
                 </div>
                 
                 <!-- Feature 2 -->
-                <div class="section-reveal text-center p-8 bg-white rounded-3xl shadow-lg card-hover">
-                    <div class="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-4xl">✨</span>
+                <div class="stagger-item text-center p-8 bg-white rounded-3xl shadow-premium hover-lift">
+                    <div class="feature-icon-premium mx-auto mb-6">
+                        <span>✨</span>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-text mb-3">طازج يومياً</h3>
-                    <p class="text-brand-text-light">جميع منتجاتنا طازجة يومياً</p>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">طازج يومياً</h3>
+                    <p class="text-brand-600">جميع منتجاتنا طازجة يومياً</p>
                 </div>
                 
                 <!-- Feature 3 -->
-                <div class="section-reveal text-center p-8 bg-white rounded-3xl shadow-lg card-hover">
-                    <div class="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-4xl">💯</span>
+                <div class="stagger-item text-center p-8 bg-white rounded-3xl shadow-premium hover-lift">
+                    <div class="feature-icon-premium mx-auto mb-6">
+                        <span>💯</span>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-text mb-3">جودة عالية</h3>
-                    <p class="text-brand-text-light">نستخدم أجود المكونات الطبيعية</p>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">جودة عالية</h3>
+                    <p class="text-brand-600">نستخدم أجود المكونات الطبيعية</p>
                 </div>
                 
                 <!-- Feature 4 -->
-                <div class="section-reveal text-center p-8 bg-white rounded-3xl shadow-lg card-hover">
-                    <div class="w-20 h-20 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-4xl">📱</span>
+                <div class="stagger-item text-center p-8 bg-white rounded-3xl shadow-premium hover-lift">
+                    <div class="feature-icon-premium mx-auto mb-6">
+                        <span>📱</span>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-text mb-3">طلب سهل</h3>
-                    <p class="text-brand-text-light">اطلب عبر الواتساب أو الدايركت</p>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">طلب سهل</h3>
+                    <p class="text-brand-600">اطلب عبر الواتساب أو الدايركت</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-brand-text relative overflow-hidden">
-        <div class="absolute inset-0 mesh-gradient opacity-20"></div>
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="py-24 lg:py-32 bg-brand-900 relative overflow-hidden">
+        <!-- Decorative -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 right-20 w-72 h-72 bg-brand-400 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-20 left-20 w-96 h-96 bg-brand-600 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="deco-dots top-40 left-10 opacity-10"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Content -->
-                <div class="section-reveal text-center lg:text-right">
-                    <span class="inline-block text-brand-primary font-bold text-lg mb-2">تواصل معنا</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
-                        اطلب <span class="text-brand-primary">الآن</span>
+                <div class="reveal text-center lg:text-right">
+                    <span class="inline-block text-brand-400 font-bold text-lg mb-4 tracking-wide">تواصل معنا</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight">
+                        اطلب
+                        <span class="text-gradient-light">الآن</span>
                     </h2>
                     
-                    <p class="text-lg text-white/80 mb-8 leading-relaxed">
+                    <p class="text-xl text-white/70 mb-10 leading-relaxed font-light max-w-lg mx-auto lg:mx-0">
                         للطلب أو للاستفسار، تواصل معنا عبر الواتساب أو الدايركت على الإنستغرام. نحن هنا لخدمتك!
                     </p>
                     
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center gap-4 justify-center lg:justify-start">
-                            <div class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
-                                <i class="fab fa-whatsapp text-white text-xl"></i>
+                    <div class="space-y-4 mb-10">
+                        <a href="https://wa.me/966537383363" target="_blank" class="contact-card flex items-center gap-5 justify-center lg:justify-start group">
+                            <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fab fa-whatsapp text-white text-2xl"></i>
                             </div>
                             <div class="text-right">
-                                <div class="text-white font-bold">الواتساب</div>
-                                <div class="text-white/70">0537383363</div>
+                                <div class="text-white font-bold text-lg">الواتساب</div>
+                                <div class="text-white/60">0537383363</div>
                             </div>
-                        </div>
+                        </a>
                         
-                        <div class="flex items-center gap-4 justify-center lg:justify-start">
-                            <div class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
-                                <i class="fab fa-instagram text-white text-xl"></i>
+                        <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="contact-card flex items-center gap-5 justify-center lg:justify-start group">
+                            <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fab fa-instagram text-white text-2xl"></i>
                             </div>
                             <div class="text-right">
-                                <div class="text-white font-bold">الإنستغرام</div>
-                                <div class="text-white/70">@dimond.2030</div>
+                                <div class="text-white font-bold text-lg">الإنستغرام</div>
+                                <div class="text-white/60">@dimond.2030</div>
                             </div>
-                        </div>
+                        </a>
                         
-                        <div class="flex items-center gap-4 justify-center lg:justify-start">
-                            <div class="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
-                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                        <div class="contact-card flex items-center gap-5 justify-center lg:justify-start">
+                            <div class="w-14 h-14 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-map-marker-alt text-white text-2xl"></i>
                             </div>
                             <div class="text-right">
-                                <div class="text-white font-bold">الموقع</div>
-                                <div class="text-white/70">جدة، المملكة العربية السعودية</div>
+                                <div class="text-white font-bold text-lg">الموقع</div>
+                                <div class="text-white/60">جدة، المملكة العربية السعودية</div>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/966537383363" target="_blank" class="inline-flex items-center gap-3 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
-                        <i class="fab fa-whatsapp text-2xl"></i>
-                        اطلب عبر الواتساب
+                    <a href="https://wa.me/966537383363" target="_blank" class="btn-premium inline-flex items-center gap-4 px-12 py-5 rounded-full text-white font-bold text-xl shadow-premium-lg">
+                        <i class="fab fa-whatsapp text-2xl relative z-10"></i>
+                        <span class="relative z-10">اطلب عبر الواتساب</span>
                     </a>
                 </div>
                 
-                <!-- Map/Instagram -->
-                <div class="section-reveal">
-                    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-                        <div class="text-center mb-6">
-                            <span class="text-6xl">👩🏻‍🍳</span>
-                            <h3 class="text-2xl font-bold text-white mt-4">فايا للمخبوزات</h3>
-                            <p class="text-white/70">@dimond.2030</p>
+                <!-- Profile Card -->
+                <div class="reveal">
+                    <div class="glass-dark rounded-[32px] p-10 shadow-2xl">
+                        <div class="text-center mb-8">
+                            <div class="relative inline-block mb-6">
+                                <div class="absolute inset-0 bg-brand-400/30 rounded-full blur-xl"></div>
+                                <div class="relative w-24 h-24 bg-gradient-to-br from-brand-400 to-brand-600 rounded-full flex items-center justify-center shadow-xl">
+                                    <span class="text-5xl">👩🏻‍🍳</span>
+                                </div>
+                            </div>
+                            <h3 class="text-3xl font-black text-white mb-2">فايا للمخبوزات</h3>
+                            <p class="text-white/60 text-lg">@dimond.2030</p>
                         </div>
                         
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 transition-all">
-                                <i class="fab fa-instagram text-3xl text-brand-primary mb-2"></i>
-                                <div class="text-white text-sm">إنستغرام</div>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="bg-white/10 rounded-2xl p-5 text-center hover:bg-white/15 transition-all group">
+                                <i class="fab fa-instagram text-4xl text-brand-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+                                <div class="text-white font-medium">إنستغرام</div>
                             </a>
-                            <a href="https://wa.me/966537383363" target="_blank" class="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 transition-all">
-                                <i class="fab fa-whatsapp text-3xl text-green-400 mb-2"></i>
-                                <div class="text-white text-sm">واتساب</div>
+                            <a href="https://wa.me/966537383363" target="_blank" class="bg-white/10 rounded-2xl p-5 text-center hover:bg-white/15 transition-all group">
+                                <i class="fab fa-whatsapp text-4xl text-green-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+                                <div class="text-white font-medium">واتساب</div>
                             </a>
                         </div>
                         
                         <div class="text-center">
-                            <p class="text-white/60 text-sm">📍 جدة، المملكة العربية السعودية</p>
+                            <p class="text-white/50">📍 جدة، المملكة العربية السعودية</p>
                         </div>
                     </div>
                 </div>
@@ -898,120 +1200,158 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-8 bg-brand-text border-t border-white/10">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-10 bg-brand-900 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-3">
-                    <span class="text-3xl">👩🏻‍🍳</span>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-400 to-brand-600 rounded-full flex items-center justify-center">
+                        <span class="text-xl">👩🏻‍🍳</span>
+                    </div>
                     <div>
                         <h3 class="text-lg font-bold text-white">Faya Bakery</h3>
-                        <p class="text-sm text-white/60">فايا للمخبوزات</p>
+                        <p class="text-sm text-white/50">فايا للمخبوزات</p>
                     </div>
                 </div>
                 
                 <div class="flex items-center gap-4">
-                    <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary transition-all">
+                    <a href="https://www.instagram.com/dimond.2030/" target="_blank" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-400 transition-all">
                         <i class="fab fa-instagram text-white"></i>
                     </a>
-                    <a href="https://wa.me/966537383363" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-500 transition-all">
+                    <a href="https://wa.me/966537383363" target="_blank" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-500 transition-all">
                         <i class="fab fa-whatsapp text-white"></i>
                     </a>
                 </div>
                 
-                <p class="text-white/60 text-sm">
+                <p class="text-white/50 text-sm">
                     © 2026 Faya Bakery. جميع الحقوق محفوظة
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/966537383363" target="_blank" class="fixed bottom-6 left-6 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow">
-        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    <!-- ==================== WHATSAPP FLOATING ==================== -->
+    <a href="https://wa.me/966537383363" target="_blank" class="fixed bottom-8 left-8 z-50 whatsapp-pulse">
+        <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+            <i class="fab fa-whatsapp text-white text-3xl"></i>
+        </div>
     </a>
 
-    <!-- Scripts -->
+    <!-- ==================== SCRIPTS ==================== -->
     <script>
         // Preloader
         window.addEventListener('load', () => {
             setTimeout(() => {
-                document.getElementById('preloader').style.opacity = '0';
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                preloader.style.pointerEvents = 'none';
                 setTimeout(() => {
-                    document.getElementById('preloader').style.display = 'none';
+                    preloader.style.display = 'none';
                 }, 500);
-            }, 1500);
+            }, 1200);
         });
-        
-        // Navbar scroll effect
+
+        // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white/95', 'backdrop-blur-xl', 'shadow-lg');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('glass', 'py-3');
+                navbar.style.backdropFilter = 'blur(20px) saturate(180%)';
             } else {
-                navbar.classList.remove('bg-white/95', 'backdrop-blur-xl', 'shadow-lg');
+                navbar.classList.remove('glass', 'py-3');
+                navbar.style.backdropFilter = 'none';
             }
+            
+            lastScroll = currentScroll;
         });
-        
-        // Mobile menu toggle
+
+        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.remove('hidden');
+            bar1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+            bar2.style.opacity = '0';
+            bar3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        }
+
+        function closeMenuFn() {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.add('hidden');
+            bar1.style.transform = 'none';
+            bar2.style.opacity = '1';
+            bar3.style.transform = 'none';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFn);
+        mobileOverlay.addEventListener('click', closeMenuFn);
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMenuFn);
         });
-        
-        // Close mobile menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Section reveal on scroll
-        const revealElements = document.querySelectorAll('.section-reveal, .line-reveal');
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal, .stagger-item');
+
         const revealOnScroll = () => {
-            revealElements.forEach(el => {
+            revealElements.forEach((el, index) => {
                 const elementTop = el.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                if (elementTop < windowHeight - 100) {
-                    el.classList.add('revealed');
+                
+                if (elementTop < windowHeight - 80) {
+                    setTimeout(() => {
+                        el.classList.add('active');
+                    }, index * 50);
                 }
             });
         };
-        
+
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
-        
-        // Video play/pause on hover
-        document.querySelectorAll('.video-card').forEach(card => {
+
+        // Video Play/Pause
+        document.querySelectorAll('.video-card-premium').forEach(card => {
             const video = card.querySelector('video');
-            const playBtn = card.querySelector('.play-btn');
-            
+            const playBtn = card.querySelector('.play-btn-premium');
+
             if (video && playBtn) {
-                playBtn.addEventListener('click', () => {
+                playBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     if (video.paused) {
                         video.play();
-                        playBtn.innerHTML = '<i class="fas fa-pause text-brand-primary text-xl"></i>';
+                        playBtn.innerHTML = '<i class="fas fa-pause" style="color: var(--brand-primary-dark); font-size: 20px;"></i>';
                     } else {
                         video.pause();
-                        playBtn.innerHTML = '<i class="fas fa-play text-brand-primary text-xl mr-1"></i>';
+                        playBtn.innerHTML = '<i class="fas fa-play" style="color: var(--brand-primary-dark); font-size: 20px; margin-right: -3px;"></i>';
                     }
                 });
-                
+
                 card.addEventListener('mouseenter', () => {
                     video.play();
-                    playBtn.innerHTML = '<i class="fas fa-pause text-brand-primary text-xl"></i>';
+                    playBtn.innerHTML = '<i class="fas fa-pause" style="color: var(--brand-primary-dark); font-size: 20px;"></i>';
                 });
-                
+
                 card.addEventListener('mouseleave', () => {
                     video.pause();
                     video.currentTime = 0;
-                    playBtn.innerHTML = '<i class="fas fa-play text-brand-primary text-xl mr-1"></i>';
+                    playBtn.innerHTML = '<i class="fas fa-play" style="color: var(--brand-primary-dark); font-size: 20px; margin-right: -3px;"></i>';
                 });
             }
         });
-        
-        // Smooth scroll for anchor links
+
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1024,15 +1364,64 @@
                 }
             });
         });
-        
-        // Parallax effect on hero
+
+        // Parallax Effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.getElementById('home');
             if (hero) {
-                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+                const blobs = hero.querySelectorAll('.deco-blob');
+                blobs.forEach((blob, i) => {
+                    blob.style.transform = `translateY(${scrolled * (0.1 + i * 0.05)}px)`;
+                });
             }
         });
+
+        // Magnetic Button Effect
+        document.querySelectorAll('.btn-premium, .btn-outline-premium').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // Counter Animation
+        const animateCounters = () => {
+            document.querySelectorAll('.text-4xl.font-black').forEach(counter => {
+                if (counter.dataset.animated) return;
+                
+                const rect = counter.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    counter.dataset.animated = 'true';
+                    const text = counter.textContent;
+                    const hasPlus = text.includes('+');
+                    const num = parseInt(text);
+                    
+                    if (!isNaN(num)) {
+                        let current = 0;
+                        const increment = num / 40;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= num) {
+                                counter.textContent = num + (hasPlus ? '+' : '');
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current) + (hasPlus ? '+' : '');
+                            }
+                        }, 30);
+                    }
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateCounters);
+        window.addEventListener('load', animateCounters);
     </script>
 </body>
 </html>
